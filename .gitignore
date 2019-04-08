@@ -6,3 +6,7 @@
 /PythonMachineLearing/MachineLearing/.idea
 
 /tensorflow-study/.idea
+
+.ipynb_checkpoints
+cifar-10-batches-py
+text_classification_data
