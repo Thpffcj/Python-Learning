@@ -29,8 +29,8 @@ batch_size : 批次(样本)数目。一次迭代（Forword 运算（用于得到
 （batch_size 默认是 20。取比较小的 batch_size 更有利于 Stochastic Gradient Descent（随机梯度下降），防止被困在局部最小值）
 """
 
-from utils import *
-from network import *
+from TensorFlow_Exercises.RNN.utils import *
+from TensorFlow_Exercises.RNN.network import *
 
 
 def train(train_data, vocab_size, num_layers, num_epochs, batch_size, model_save_name,
