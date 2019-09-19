@@ -57,8 +57,10 @@ def get_ave_score(input_file):
             line_num += 1
             continue
         item = line.strip().split(",")
+
         if len(item) < 4:
             continue
+
         user_id, item_id, rating = item[0], item[1], float(item[2])
         if item_id not in record_dict:
             record_dict[item_id] = [0, 0]
@@ -88,24 +90,30 @@ def get_train_data(input_file):
     line_num = 0
     score_thr = 4.0
     fp = open(input_file)
+    i = 1
     for line in fp:
         if line_num == 0:
             line_num += 1
             continue
         item = line.strip().split(",")
+
         if len(item) < 4:
             continue
+
         user_id, item_id, rating = item[0], item[1], float(item[2])
         if user_id not in pos_dict:
             pos_dict[user_id] = []
         if user_id not in neg_dict:
             neg_dict[user_id] = []
+
         # 如果大于4分，认为用户喜欢这部电影
         if rating >= score_thr:
+            # {'1': [('1', 1), ('3', 1)]}
             pos_dict[user_id].append((item_id, 1))
         else:
             # 需要进行负采样
             score = score_dict.get(item_id, 0)
+            # {'1': [('70', 3.509), ('223', 3.856)]}
             neg_dict[user_id].append((item_id, score))
     fp.close()
     # 正负样本均衡
@@ -116,6 +124,8 @@ def get_train_data(input_file):
         else:
             continue
 
+        # 按得分降序排列
+        # [('7153', 4.119), ('4993', 4.106), ('134853', 3.814), ('102007', 3.0)]
         sorted_neg_list = sorted(neg_dict[user_id], key=lambda element: element[1], reverse=True)[:data_num]
         train_data += [(user_id, pos[0], 0) for pos in sorted_neg_list]
     return train_data
@@ -125,5 +135,8 @@ if __name__ == '__main__':
     # get_item_info("../data/movies.csv")
     # print(get_ave_score("../data/ratings.csv"))
     train_data = get_train_data("../data/ratings.csv")
-    print(len(train_data))
-    print(train_data[:20])
+    # [('337', '1', 1), ('337', '3', 1), ('337', '5', 1), ('337', '6', 1)]
+    # print(train_data[:20])
+    # print(train_data[train_data[:][0] == '1'])
+    print([data for data in train_data if data[0] == '1'])
+

@@ -12,3 +12,4 @@ cifar-10-batches-py
 text_classification_data
 
 *.idea
+*.csv
