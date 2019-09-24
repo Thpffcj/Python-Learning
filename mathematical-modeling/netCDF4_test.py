@@ -42,8 +42,21 @@ time = (nc_obj.variables['time'][:])
 sst = (nc_obj.variables['sst'][:])
 
 # nc.num2date(1297320, 'hours since 1800-01-01 00:00:0.0')
+'''
+[datetime.datetime(1854, 1, 1, 0, 0) datetime.datetime(1854, 2, 1, 0, 0)
+ datetime.datetime(1854, 3, 1, 0, 0) ...
+ datetime.datetime(2019, 3, 1, 0, 0) datetime.datetime(2019, 4, 1, 0, 0)
+ datetime.datetime(2019, 5, 1, 0, 0)]
+ 1985
+ '''
+
 times = nc.num2date(time[:], 'days since 1800-01-01 00:00:0.0')
-print(times[:])
+'''
+1854-07-01 00:00:00
+2018-07-01 00:00:00
+'''
+print(times[6])
+print(times[1974])
 
 
 # print(lat)
