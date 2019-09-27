@@ -1,6 +1,10 @@
 # -*- coding: UTF-8 -*-
 # Created by thpffcj on 2019/9/20.
 
+'''
+    绘制同地同时气候变化图
+'''
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import pylab as mpl

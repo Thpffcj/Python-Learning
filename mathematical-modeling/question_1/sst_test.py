@@ -1,5 +1,8 @@
 # -*- coding: UTF-8 -*-
 # Created by thpffcj on 2019/9/19.
+'''
+    通过海洋表面温度数据绘制海洋表面温度平均温度地球图
+'''
 
 from netCDF4 import Dataset
 import numpy as np

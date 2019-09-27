@@ -1,8 +1,11 @@
 # -*- coding: UTF-8 -*-
 # Created by thpffcj on 2019/9/20.
 
+'''
+    绘制加拿大13个区域历史温度变化情况
+'''
+
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import pylab as mpl
 from matplotlib.font_manager import FontProperties

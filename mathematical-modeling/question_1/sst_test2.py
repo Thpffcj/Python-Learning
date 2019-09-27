@@ -1,6 +1,10 @@
 # -*- coding: UTF-8 -*-
 # Created by thpffcj on 2019/9/20.
 
+'''
+    绘制不同纬度海洋平均温度图
+'''
+
 from netCDF4 import Dataset
 import pandas as pd
 import matplotlib.pyplot as plt
