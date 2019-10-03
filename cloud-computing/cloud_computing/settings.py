@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for cloud_computing project
+# Scrapy settings for cloud-computing project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'cloud_computing.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'cloud_computing (+http://www.yourdomain.com)'
+#USER_AGENT = 'cloud-computing (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -25,7 +25,7 @@ ROBOTSTXT_OBEY = True
 USER_AGENT = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;"
 
 ITEM_PIPELINES = {
-   'cloud_computing.pipelines.DoubanPipeline': 300,
+   'cloud-computing.pipelines.DoubanPipeline': 300,
 }
 
 # MONGODB 主机名
@@ -63,13 +63,13 @@ MONGODB_SHEETNAME = "doubanmovies"
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'cloud_computing.middlewares.CloudComputingSpiderMiddleware': 543,
+#    'cloud-computing.middlewares.CloudComputingSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'cloud_computing.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'cloud-computing.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -81,7 +81,7 @@ MONGODB_SHEETNAME = "doubanmovies"
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'cloud_computing.pipelines.CloudComputingPipeline': 300,
+#    'cloud-computing.pipelines.CloudComputingPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
