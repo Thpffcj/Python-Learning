@@ -10,11 +10,10 @@ $HDFS -mkdir ${streaming_dir}/tmp
 
 while [ 1 ]
 do
-  python generate_log.py>test.log
   # 加上时间戳，防止重名
   templog="access.`date +'%s'`.log"
   # 先将日志放到临时目录，再移动到Streaming监听目录，确保原子性
   $HDFS -put test.log ${streaming_dir}/tmp/$templog
   $HDFS -mv ${streaming_dir}/tmp/$templog ${streaming_dir}/
-  sleep 10
+  sleep 5
 done
