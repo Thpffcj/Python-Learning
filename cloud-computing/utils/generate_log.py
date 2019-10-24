@@ -5,6 +5,7 @@ import pymongo
 import time
 import os
 
+
 # 连接数据库
 client = pymongo.MongoClient("101.132.176.87", 27017)
 
@@ -13,13 +14,13 @@ db.authenticate("steam", "steam")
 
 table = db['China.games']
 
-data = table.find().limit(10)
+data = table.find()
 print("数据加载完成...")
-# os.system("./write_log.sh")
+# print(data.count())
 
 
-def generate_log(count=10):
-
+def generate_log(count=1000):
+    print("进入方法...")
     flag = 0
     steam_log = ""
     for game_data in data:
@@ -39,10 +40,16 @@ def generate_log(count=10):
             print("写日志...")
             f = open("/Users/thpffcj/Public/local-repository/Python-Learning/cloud-computing/utils/test.log", "w")
             f.write(steam_log)
+            time.sleep(1)
+
+            # 上传
+            print("上传日志...")
+            os.system("./write_log.sh")
+
             flag = 0
             steam_log = ""
             f.close()
-            time.sleep(5)
+            time.sleep(4)
 
     print("结束...")
     f = open("/Users/thpffcj/Public/local-repository/Python-Learning/cloud-computing/utils/test.log", "w")
@@ -51,4 +58,5 @@ def generate_log(count=10):
 
 
 if __name__ == '__main__':
+
     generate_log()
