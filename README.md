@@ -1,20 +1,45 @@
 # Python-Learning
 
-## ArticleSpider
+- 主要放一些学习Python过程中觉得可以作为积累的代码
 
-- 聚焦Python分布式爬虫必学框架Scrapy 打造搜索引擎
+## analysis-of-legal-documents
 
-## PythonBasis
+- 本科毕业设计
+- 在一起案件的审 理过程中，事实与证据之间通常存在紧密的关系，我们的目标就是通过法律文书 来研究案件中事实与证据的关系
+
+## article-spider
+
+- 聚焦Python分布式爬虫必学框架Scrapy，打造搜索引擎
+
+## cloud-computing
+
+- 云计算课程相关脚本，主要是生成日志等
+
+## data-mining
+
+- 学习简单数据处理
+
+## deep-learning-neural-network
+
+- 学习深度学习相关代码
+
+## mathematical-modeling
+
+- 数学建模相关代码
+
+## python-basis
 
 - 从基础入门Python3，掌握Python3.x 版本语法
 
-## PythonEfficientProgramming
+## python-machine-learing
 
-- Python高效编程技巧实战
+- Python3入门机器学习，经典算法与应用
 
-## PythonMachineLearing
+## tensorflow-study
 
-- Python3入门机器学习 经典算法与应用
+- 学习TensorFlow基本使用
 
-## PythonMySQL
+## titanic
+
+- 学习经典问题Titanic预测
 
