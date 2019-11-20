@@ -2,21 +2,29 @@
 # Created by thpffcj on 2019/10/30.
 
 import pymongo
-import time
-import os
 
 
 # 连接数据库
-client = pymongo.MongoClient("101.132.176.87", 27017)
+client1 = pymongo.MongoClient("101.132.176.87", 27017)
 
-db = client['steam_db']
-db.authenticate("steam", "steam")
+db1 = client1['steam_db']
+db1.authenticate("steam", "steam")
 
-table = db['China.reviews']
+table = db1['China.reviews_official']
 
-data = table.find().limit(10)
+data = table.find().limit(300000)
 print("数据加载完成...")
 # 65175
+# for d in data:
+#     print(d["game"])
 
-for i in range(0, 10):
-    print(data[i])
+
+# Python写MongoDB
+client2 = pymongo.MongoClient("127.0.0.1", 27017)
+# 库名inventory
+db2 = client2['test']
+# 集合名items
+collection = db2['China.reviews_official_30W']
+
+# 插入一个文档，item是一个字典{}
+collection.insert(data)
