@@ -11,6 +11,8 @@
 cifar-10-batches-py
 text_classification_data
 
+/python-work/data/*
+
 *.idea
 *.csv
 *.nc
